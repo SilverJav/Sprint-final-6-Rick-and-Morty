@@ -23,23 +23,20 @@
     </div>
   </div>
 </div>
-</div>
-
-
+  </div>
 
 </template>
 
 <script>
 export default {
-    name:"Modal",
-    
-  props: {
-    modalProps:{
-        type: Object,
-        required:true,
+
+    props: {
+        modalProps:{
+            type:Object,
+            required:true,
+        }
     }
-  },
-};
+}
 </script>
 
 <style>
