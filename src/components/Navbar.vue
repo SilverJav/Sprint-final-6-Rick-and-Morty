@@ -20,6 +20,12 @@
         <li class="nav-item">
           <a class="nav-link" href=""><router-link to="/login">Login</router-link></a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" data-bs-toggle="modal" data-bs-target="#exampleModalCart">Carrito</a>
+        </li>
+        
+        
+        
       </ul>
     </div>
   </div>
@@ -29,8 +35,16 @@
 </template>
 
 <script>
-export default {
 
+import CartDetail from'@/components/CartDetail.vue'
+
+export default {
+  
+  components:{
+    CartDetail,
+  },
+  
+  
 }
 </script>
 

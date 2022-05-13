@@ -24,6 +24,12 @@ const routes = [
     name: 'login',
     
     component: () => import( '../views/LoginView.vue')
+  },
+  {
+    path: '/favoritos',
+    name: 'favoritos',
+    
+    component: () => import( '../views/FavoritosView.vue')
   }
 
 ]
