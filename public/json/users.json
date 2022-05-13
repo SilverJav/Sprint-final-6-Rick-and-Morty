@@ -1,10 +1,6 @@
 [
   {
-    "users": [
-      {
         "user": "admin",
-        "pass": "123"
-      }
-    ]
+        "pass": 123
   }
 ]

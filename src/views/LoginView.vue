@@ -1,9 +1,9 @@
 <template>
 <div class="container">
-  <form>
+  
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">User</label>
-    <input v-model="usuario" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <input v-model="usuario" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
     <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
   </div>
   <div class="mb-3">
@@ -14,26 +14,28 @@
     <input type="checkbox" class="form-check-input" id="exampleCheck1">
     <label class="form-check-label" for="exampleCheck1">Check me out</label>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+  <button class="btn btn-primary" @click="validarLogin()">Submit</button>
+
 </div>
 </template>
 
 <script>
 export default {
+
   name:"LoginView",
+
   data() {
     return {
-      resultUser: [],
+      resultUser:[],
       usuario:"",
-      usuario2:"admin",
       contra:"",
-      contra2:"123",
+      loginNav:"Login"
     };
   },
 
   mounted() {
     fetch('json/users.json')
+      .then((res) => res.json())
       .then(data => {this.resultUser = data
       console.log(data)}
       )
@@ -41,12 +43,14 @@ export default {
   },
   methods:{
     validarLogin(){
-      if(usuario===usuario2 && contra===contra2){
-        
+
+      if(this.usuario==this.resultUser[0].user && this.contra==this.resultUser[0].pass){
+        this.$router.push('Home')
+      }else{
+        alert("datos malos")
       }
     }
   }
-
 }
 </script>
 
