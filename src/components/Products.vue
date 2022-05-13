@@ -1,7 +1,11 @@
 <template>
   <div>
-  <Card :resultProps="result"/>
-</div>
+  <Card :resultProps="result" />
+  
+  </div>
+  <div>
+    <h1>hola</h1>
+  </div>
 </template>
 
 <script>
@@ -29,7 +33,6 @@ export default {
   },
 };
 
-  
   
 
 </script>
