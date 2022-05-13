@@ -9,7 +9,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href=""><router-link to="/">Home</router-link></a>
+          <a class="nav-link" href=""><router-link to="/home">Home</router-link></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href=""><router-link to="/about">About</router-link></a>
@@ -18,7 +18,7 @@
           <a class="nav-link" href=""><router-link to="/contact">Contact</router-link></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href=""><router-link to="/login">Login</router-link></a>
+          <a class="nav-link" href=""><router-link to="/">Login</router-link></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="" data-bs-toggle="modal" data-bs-target="#exampleModalCart">Carrito</a>

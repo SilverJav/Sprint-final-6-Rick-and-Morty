@@ -4,8 +4,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: () => import('../views/HomeView.vue')
+    name: 'login',
+    component: () => import('../views/LoginView.vue')
   },
   {
     path: '/about',
@@ -20,10 +20,10 @@ const routes = [
     component: () => import( '../views/ContactView.vue')
   },
   {
-    path: '/login',
-    name: 'login',
+    path: '/home',
+    name: 'home',
     
-    component: () => import( '../views/LoginView.vue')
+    component: () => import( '../views/HomeView.vue')
   },
   {
     path: '/favoritos',

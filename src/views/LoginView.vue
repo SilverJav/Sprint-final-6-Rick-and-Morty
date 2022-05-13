@@ -21,13 +21,16 @@
 
 <script>
 export default {
+
   name:"LoginView",
+
   data() {
     return {
       resultUser: [],
       usuario:"",
       usuario2:"admin",
       contra:"",
+      hola:"",
       contra2:"123",
     };
   },
@@ -42,6 +45,7 @@ export default {
   methods:{
     validarLogin(){
       if(usuario===usuario2 && contra===contra2){
+
         
       }
     }
