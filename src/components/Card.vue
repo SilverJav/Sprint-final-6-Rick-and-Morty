@@ -34,7 +34,7 @@
               <button type="button" class="btn btn-primary p-1" @click="addToCart(item.id)">Comprar</button>
               <button
                 type="button"
-                class="btn btn-primary p-1"
+                class="btn  btn-danger p-1"
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
                 @click="showMore(item)"
@@ -42,13 +42,7 @@
                 Detalles
               </button>
             </div>
-            <button
-              type="button"
-              class="btn btn-danger p-1"
-              @click="addFavorites(item)"
-            >
-              Favorito
-            </button>
+            
           </div>
         </div>
       </div>
