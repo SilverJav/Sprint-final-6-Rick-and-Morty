@@ -26,7 +26,7 @@
       <td>
         <button type="button" class="btn btn-secondary" @click="oneLess(item.id)" >-</button>
         <button type="button" class="btn btn-secondary" @click="oneMore(item.id)" >+</button>
-        <button type="button" class="btn btn-secondary" >X</button>
+        <button type="button" class="btn btn-secondary" @click="remove(item.id)" >X</button>
       </td>
     </tr>
   
@@ -67,6 +67,9 @@ export default {
       ,
       oneMore(idMore){
         this.$emit('oneMore2', idMore)
+      },
+      remove(idRemove){
+        this.$emit('remove2', idRemove)
       }
 
     }
