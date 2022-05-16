@@ -24,8 +24,8 @@
       <td>{{item.cant}}</td>
       <td>{{item.cant*item.precio}}</td>
       <td>
-        <button type="button" class="btn btn-secondary" >-</button>
-        <button type="button" class="btn btn-secondary" >+</button>
+        <button type="button" class="btn btn-secondary" @click="oneLess(item.id)" >-</button>
+        <button type="button" class="btn btn-secondary" @click="oneMore(item.id)" >+</button>
         <button type="button" class="btn btn-secondary" >X</button>
       </td>
     </tr>
@@ -34,8 +34,8 @@
 </table>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" @click="removeAll()" >Vaciar Carrito</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" @click="removeAll" >Vaciar Carrito</button>
       </div>
     </div>
   </div>
@@ -50,11 +50,27 @@ export default {
             type:Array,
             required:true,
         },
-        removeAllP:{
-            type:Function,
-             required:false,
-        },
+        // removeAllP:{
+        //     type:Function,
+        //      required:false,
+        // },
+    },
+    methods:{
+      removeAll(){
+        console.log(this.cardACart)
+        this.$emit('removeAll2')
+      },
+      oneLess(idLess){
+        this.$emit('oneLess2', idLess)
+
+      }
+      ,
+      oneMore(idMore){
+        this.$emit('oneMore2', idMore)
+      }
+
     }
+    
 }
 
 </script>

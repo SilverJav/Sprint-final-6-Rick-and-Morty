@@ -1,5 +1,5 @@
 <template>
-  <CartDetail :cardACart="carrito" :removeAllP="removeAll"/>
+  <CartDetail :cardACart="carrito" @removeAll2="onRemoveAll" @oneMore2="onOneMore" @oneLess2="onOneLess" />
   <Modal :modalProps="modal" />
   
   <div class="container-fluid mb-5">
@@ -124,10 +124,24 @@ export default {
       console.log("el producto ya esta")
       }
       console.log(this.carrito);
+      console.log(this.producto)
 
     },
-    removeAll(){
+    onRemoveAll(){
+      console.log(this.carrito)
       this.carrito = []
+      console.log(this.carrito)
+    },
+    onOneMore(idMore){
+      let oneMoreFind = this.carrito.find(item2 => item2.id == idMore)
+      oneMoreFind.cant++
+      //console.log(oneMoreFind)
+      //console.log(this.oneMoreFind)
+    },
+    onOneLess(idLess){
+      let oneLessFind = this.carrito.find(item3 => item3.id == idLess)
+
+      oneLessFind.cant--
     }
     
   },
