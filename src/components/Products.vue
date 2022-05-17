@@ -23,6 +23,12 @@ export default {
        
     };
   },
+  //  async mounted() {
+  //   const response  = await fetch("https://rickandmortyapi.com/api/character")
+  //   const { data: users } = await res.json()
+    
+  //   this.result = response
+  // },
   mounted() {
     fetch("https://rickandmortyapi.com/api/character")
       .then((res) => res.json())
