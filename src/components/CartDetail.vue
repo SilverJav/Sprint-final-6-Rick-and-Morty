@@ -36,6 +36,7 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
         <button type="button" class="btn btn-primary" @click="removeAll" >Vaciar Carrito</button>
+        <p>{{totale}}</p>
       </div>
     </div>
   </div>
@@ -50,10 +51,15 @@ export default {
             type:Array,
             required:true,
         },
-        // removeAllP:{
-        //     type:Function,
-        //      required:false,
-        // },
+        totale:{
+          type: Number,
+          required:true,
+        }
+    },
+    data(){
+      return{
+        sumatoria: 0
+      }
     },
     methods:{
       removeAll(){
@@ -62,7 +68,6 @@ export default {
       },
       oneLess(idLess){
         this.$emit('oneLess2', idLess)
-
       }
       ,
       oneMore(idMore){
@@ -72,7 +77,8 @@ export default {
         this.$emit('remove2', idRemove)
       }
 
-    }
+    },
+    
     
 }
 

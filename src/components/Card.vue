@@ -1,5 +1,5 @@
 <template>
-  <CartDetail :cardACart="carrito" @removeAll2="onRemoveAll" @oneMore2="onOneMore" @oneLess2="onOneLess" @remove2="onRemove" />
+  <CartDetail :totale="sumatoria" :cardACart="carrito" @removeAll2="onRemoveAll" @oneMore2="onOneMore" @oneLess2="onOneLess" @remove2="onRemove" />
   <Modal :modalProps="modal" />
   
   <div class="container-fluid mb-5">
@@ -74,6 +74,7 @@ export default {
         species: "",
       },
       filtro: "",
+      sumatoria: 0,
     };
   },
   props: {
@@ -107,8 +108,15 @@ export default {
       }
       console.log(this.favorites);
     },
+    totalCarrito(){
+      this.sumatoria = 0
+      for (let i=0; i < this.carrito.length; i++){
+        this.sumatoria += this.carrito[i].precio*this.carrito[i].cant;
+      }
+      },
     addToCart(idAdd){
       //verificar si el producto ya esta en el carrito
+      
       this.producto = this.resultProps.find(item=>item.id === idAdd)
 
       this.verificar= this.carrito.some(item=>item.id===idAdd)
@@ -125,6 +133,7 @@ export default {
       }
       console.log(this.carrito);
       console.log(this.producto)
+      this.totalCarrito()
 
     },
     onRemoveAll(){
@@ -135,7 +144,7 @@ export default {
     onOneMore(idMore){
       let oneMoreFind = this.carrito.find(item2 => item2.id == idMore)
       oneMoreFind.cant++
-      
+      this.totalCarrito()
       //console.log(oneMoreFind)
       //console.log(this.oneMoreFind)
     },
@@ -145,11 +154,14 @@ export default {
       if(oneLessFind.cant <= 0){
         this.onRemove(idLess)
       }
+      this.totalCarrito()
     },
     onRemove(idRemove){
       let oneRemove = this.carrito.filter(item4 => item4.id !== idRemove)
       this.carrito = oneRemove
-    }
+      this.totalCarrito()
+    },
+    
     
   },
   computed: {
@@ -159,6 +171,9 @@ export default {
       });
     },
   },
+     
+
+    
 };
 </script>
 
