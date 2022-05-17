@@ -1,4 +1,4 @@
-URL = 'https://rickandmortyapi.com/api/character'
+const URL = 'https://rickandmortyapi.com/api/character'
 
 export const getApiRick = async (value)=>{
     const request = await fetch(URL)
