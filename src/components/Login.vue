@@ -48,7 +48,7 @@ export default {
       if(this.usuario==this.resultUser[0].user && this.contra==this.resultUser[0].pass){
         this.$router.push('home')
       }else{
-        alert("datos malos")
+        alert("Los datos ingresados son erroneos")
       }
     }
   }
