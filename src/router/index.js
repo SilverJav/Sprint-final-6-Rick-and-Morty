@@ -25,13 +25,7 @@ const routes = [
     
     component: () => import( '../views/HomeView.vue')
   },
-  {
-    path: '/favoritos',
-    name: 'favoritos',
-    
-    component: () => import( '../views/FavoritosView.vue')
-  }
-
+  
 ]
 
 const router = createRouter({
