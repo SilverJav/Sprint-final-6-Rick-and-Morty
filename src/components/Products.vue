@@ -3,9 +3,6 @@
   <Card :resultProps="result" />
   
   </div>
-  <div>
-    <h1>hola</h1>
-  </div>
 </template>
 
 <script>
