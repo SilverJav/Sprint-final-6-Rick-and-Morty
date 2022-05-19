@@ -14,7 +14,7 @@
       <th scope="col">Nombre</th>
       <th scope="col">Precio</th>
       <th scope="col">Cant</th>
-      <th scope="col">Total</th>
+      <th scope="col">Subtotal</th>
     </tr>
   </thead>
   <tbody>
@@ -33,10 +33,13 @@
   </tbody>
 </table>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary" @click="removeAll" >Vaciar Carrito</button>
-        <p>{{totale}}</p>
+      <div class="modal-footer d-flex justify-content-between">
+        <p>Total a pagar: {{totale}}</p>
+        <div>
+          <button type="button" class="btn  btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn mx-1 btn-primary" @click="removeAll" >Vaciar Carrito</button>
+        </div>
+        
       </div>
     </div>
   </div>
@@ -61,6 +64,8 @@ export default {
         sumatoria: 0
       }
     },
+
+//Emits para informar modificaciones en el carrito
     methods:{
       removeAll(){
         console.log(this.cardACart)
